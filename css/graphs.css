@@ -1,0 +1,100 @@
+/*
+Here is the index CSS file + comments. Comments here will NOT be repeated in the other files. Additional comments might be added to the other files if further explanation is needed.
+
+Normal things like font sizes and colours etc will not be discussed in this file since these are very basic things.
+*/
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 auto;
+  padding: 0 0;
+  line-height: 0.2em;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: gray;
+  transition: all 0.3s ease;
+}
+/*Using CSS grids for a responsive website. Dividing the grid into 4 columns and 3 rows that can easily be managed.*/
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 8vh auto 8vh;
+  grid-gap: 1em;
+
+}
+/*The header of the page is divided from the beginning of column 1 to the end of column 4.*/
+header {
+  grid-column: 1 / 5;
+  align-items: center;
+}
+footer {
+  font-family: 'Lobster', cursive;
+  grid-column: 1 / 5;
+  padding: 2em;
+  vertical-align: middle;
+  text-align: center;
+}
+/*Having split into 4 columns we place the top left link in the first two columns while we place the top right link in the 3rd and 4th column. The reason for not putting the links in only one column is for the mobile version of the website where the links get better placed if given more room.*/
+.headerleft {
+  align-self: center;
+  margin-left: 2em;
+  grid-column: 1 / 3;
+}
+.headerleft:hover {
+  color: gray;
+}
+.headerright {
+  align-self: center;
+  text-align: right;
+  margin-right: 2em;
+  grid-column: 3 / 5;
+}
+.headerright:hover {
+  color: gray;
+}
+/*The main area of the website I.e. row 2 in the grid is split into a sub grid containing 5 columns for more flexibility and 4 rows, combining auto heights and fixed heights. */
+article {
+  grid-column: 1 / 5;
+  grid-gap: 1em;
+  position: relative;
+  justify-content: center;
+  align-self: center;
+  padding: 0 5em;
+}
+h1 {
+  text-align: center;
+  font-size: 8em;
+  color: #2c2c2c;
+  text-shadow:
+    4px 4px 0px #d5d5d5,
+    7px 7px 0px rgba(0, 0, 0, 0.2);
+}
+h2 {
+  text-align: center;
+  font-size: 1.3em;
+}
+
+/*Using the @media tag to resize the reposition blocks of the website for the mobile versions. Using different @media tags for different viewports. For example: we are changing the font for the smaller screens and lessening the padding around the page.*/
+@media all and (max-width: 1000px) {
+  h1 {
+    font-size: 6em;
+  }
+  article {
+    padding: 2;
+  }
+}
+@media all and (max-width: 480px) {
+  h1 {
+    font-size: 4em;
+  }
+  h2 {
+    font-size: 1em;
+  }
+  article {
+    padding: 0;
+    margin: auto;
+  }
+}
